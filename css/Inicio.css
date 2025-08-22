@@ -164,12 +164,29 @@ header nav ul li a:hover {
       display: flex;
       align-items: center;
       justify-content: center;
+      display: flex;
+      flex-wrap: wrap;   /* permite que salten a otra línea */
+      gap: 10px;
     }
 
 .dato.azul {
   background: #005f86;
   color: white;
   text-align: center;
+  flex: 1 1 300px;   /* ancho flexible, mínimo 300px */
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* Versión responsive */
+@media (max-width: 768px) {
+  .contenedor-cuadros {
+    flex-direction: column; /* en móviles, uno debajo del otro */
+  }
+
+  .contenedor-cuadros .cuadro {
+    width: 100%; /* ocupar todo el ancho en móvil */
+  }
 }
 
 /* Footer */
@@ -236,3 +253,4 @@ footer a:hover {
   text-decoration: underline;
   font-weight: 600;
 }
+
